@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen active">
+      <div class="start-card">
+        <div class="quiz-icon">?</div>
+        <h1>Trivia Quiz</h1>
+        <p class="subtitle">Test your knowledge across science, history, tech, and geography</p>
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-value">12</span>
+            <span class="stat-label">Questions</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">15s</span>
+            <span class="stat-label">Per Question</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="high-score-display">0</span>
+            <span class="stat-label">High Score</span>
+          </div>
+        </div>
+        <button id="start-btn" class="btn-primary">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen">
+      <div class="quiz-header">
+        <div class="progress-info">
+          <span id="question-counter">Question 1 / 12</span>
+          <span id="score-display">Score: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="timer-bar">
+        <div id="timer-fill" class="timer-fill"></div>
+      </div>
+      <div class="timer-text">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span id="timer-text">15</span>s
+      </div>
+
+      <div id="question-container" class="question-container">
+        <span id="category-badge" class="category-badge">Science</span>
+        <h2 id="question-text">Question goes here?</h2>
+        <div id="options-container" class="options-container"></div>
+      </div>
+
+      <button id="next-btn" class="btn-primary next-btn" style="display:none;">Next Question</button>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+      <div class="results-card">
+        <div id="results-emoji" class="results-emoji">🏆</div>
+        <h2 id="results-title">Great Job!</h2>
+        <div class="results-score">
+          <span id="results-score-text">8 / 12</span>
+          <div class="results-percentage">
+            <svg viewBox="0 0 120 120" class="score-ring">
+              <circle cx="60" cy="60" r="52" class="score-ring-bg"/>
+              <circle id="score-ring-fill" cx="60" cy="60" r="52" class="score-ring-fill"/>
+            </svg>
+            <span id="results-percent" class="percent-text">67%</span>
+          </div>
+        </div>
+        <div id="new-high-score" class="new-high-score" style="display:none;">New High Score!</div>
+
+        <div class="results-actions">
+          <button id="review-btn" class="btn-secondary">Review Answers</button>
+          <button id="retry-btn" class="btn-primary">Play Again</button>
+        </div>
+      </div>
+
+      <div id="review-section" class="review-section" style="display:none;">
+        <h3>Answer Review</h3>
+        <div id="review-list" class="review-list"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
