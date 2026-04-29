@@ -24,3 +24,5 @@ Open `index.html` in any modern browser. Click "Start Quiz" to begin. Answer eac
 - HTML5
 - CSS3 (custom properties, SVG animation, keyframes)
 - Vanilla JavaScript (localStorage, DOM manipulation)
+
+<sub><sup>Originally developed and tested locally during learning. Later organized and pushed to GitHub for portfolio visibility.</sup></sub>
